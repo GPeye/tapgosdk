@@ -1,4 +1,4 @@
-package tapsdk
+package tapgosdk
 
 import "fmt"
 
@@ -9,4 +9,10 @@ func main() {
 func Hello(name string) string {
 	message := fmt.Sprintf("Hi, %v. Welcome!", name)
 	return message
+}
+
+func must(action string, err error) {
+	if err != nil {
+		panic("failed to " + action + ": " + err.Error())
+	}
 }
