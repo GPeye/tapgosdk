@@ -4,7 +4,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GPeye/tapgosdk/internal/events"
+	"github.com/GPeye/tapgosdk/events"
 	"tinygo.org/x/bluetooth"
 )
 
@@ -119,4 +119,15 @@ func (tm TapManager) RestartDeviceWatcher() {
 			tm.deviceWatcher.Stop()
 		}
 	}
+}
+
+func (tm *TapManager) SetDefaultIputMode(inputMode TAPInputMode) {
+	tm.defaultInputMode = inputMode
+}
+
+func (tm *TapManager) Vibrate(durations []byte) {
+	tm.taps[0].Vibrate(durations)
+	// for i := range len(tm.taps) {
+	// 	tm.taps[i].Vibrate(durations)
+	// }
 }

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/GPeye/tapgosdk"
-	"github.com/GPeye/tapgosdk/internal/events"
+	"github.com/GPeye/tapgosdk/events"
 )
 
 type onTapped struct{}
