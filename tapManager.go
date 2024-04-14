@@ -78,6 +78,10 @@ func (d deviceScanStoppedNotifier) Handle() {
 	}
 }
 
+func (tm *TapManager) HasMultipleTapConnections() bool {
+	return len(tm.taps) > 1
+}
+
 func (tm *TapManager) addDevice(tapDevice TapDevice) {
 	tm.taps = append(tm.taps, tapDevice)
 }
